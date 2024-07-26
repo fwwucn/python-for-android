@@ -35,6 +35,9 @@ android {
         versionCode {{ args.numeric_version }}
         versionName '{{ args.version }}'
         manifestPlaceholders = {{ args.manifest_placeholders}}
+        ndk { 
+            abiFilters 'arm64-v8a'
+        }
     }
 
 	
