@@ -110,7 +110,7 @@ android {
 
 dependencies {
     {%- for aar in aars %}
-    implementation(name: '{{ aar }}', ext: 'aar')
+    implementation files('libs/{{ aar }}')
     {%- endfor -%}
     {%- for jar in jars %}
     implementation files('src/main/libs/{{ jar }}')
