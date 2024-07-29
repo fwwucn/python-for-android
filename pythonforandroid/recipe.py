@@ -236,7 +236,7 @@ class Recipe(metaclass=RecipeMeta):
                 if self.version:
                     shprint(sh.git, 'fetch', '--tags', '--depth', '1')
                     shprint(sh.git, 'checkout', self.version)
-                branch = sh.git('rev-parse', '--abbrev-ref', 'HEAD')
+                branch = sh.git('branch', '--show-current')
                 if branch:
                     shprint(sh.git, 'pull')
                     shprint(sh.git, 'pull', '--recurse-submodules')
