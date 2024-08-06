@@ -167,6 +167,8 @@ def make_tar(tfn, source_dirs, byte_compile_python=False, optimize_python=True):
                 continue
             if fn.endswith('.py') and byte_compile_python:
                 fn = compile_py_file(fn, optimize_python=optimize_python)
+            if fn is None:
+                continue
             files.append((fn, relpath(realpath(fn), sd)))
     files.sort()  # deterministic
 
